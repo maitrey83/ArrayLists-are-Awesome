@@ -204,11 +204,14 @@ public class SeeTheUS extends GraphicsProgram {
 	 * @param distance The distance to the nearest US city.
 	 * @return A color encoding that intensity.
 	 */
+	private float color = 1.0f;
 	private Color getColorForDistance(double distance) {
 		/* We need a function to map [0, inf) to [0, 1], so we'll
 		 * use the arctangent function.
 		 */
 		float intensity = 1.0f - (float)(Math.atan(distance) / (Math.PI / 2.0));
-		return new Color(intensity, intensity, intensity);
+		color += 0.0001;
+		color %= 1.0;
+		return new Color(Color.HSBtoRGB(color, 1.0f, intensity));
 	}
 }
