@@ -212,6 +212,6 @@ public class SeeTheUS extends GraphicsProgram {
 		float intensity = 1.0f - (float)(Math.atan(distance) / (Math.PI / 2.0));
 		color += 0.0001;
 		color %= 1.0;
-		return new Color(Color.HSBtoRGB(color, 1.0f, intensity));
+		return new Color(Color.HSBtoRGB(color, 0.0f, intensity));
 	}
 }
