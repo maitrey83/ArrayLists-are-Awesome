@@ -47,6 +47,43 @@ public class SeeTheUS extends GraphicsProgram {
 	}
 	
 	/**
+	 * Reads in a list of US cities.
+	 * 
+	 * @return A list of all US cities.
+	 */
+	private ArrayList<City> readUSCities() {
+		try {
+			ArrayList<City> result = new ArrayList<City>();
+			BufferedReader br = new BufferedReader(new FileReader(CITIES_FILE));
+			
+			while (true) {
+				/* Read the three pieces of the city from the file. */
+				String name = br.readLine();
+				String latitude = br.readLine();
+				String longitude = br.readLine();
+				
+				/* If we ran out of data, we're done. */
+				if (longitude == null)
+					break;
+				
+				/* Create the city and add it to the result list.  Note the
+				 * call to Double.parseDouble to convert the string representations
+				 * of the longitude and latitude into doubles.
+				 */
+				City toAdd = new City(name,
+						              Double.parseDouble(longitude),
+						              Double.parseDouble(latitude));
+				result.add(toAdd);
+			}
+			
+			br.close();
+			return result;			
+		} catch (IOException e) {
+			throw new ErrorException(e);
+		}
+	}
+	
+	/**
 	 * Iteratively draws a heat map by picking random points and computing the distance from
 	 * that point to the nearest US city.  This method does not return.
 	 * 
@@ -56,21 +93,24 @@ public class SeeTheUS extends GraphicsProgram {
 		/* The initial radius of the blocks. */
 		double radius = INITIAL_RADIUS;
 		
-		while (true) {
-			/* Pick a point to draw. */
-			GPoint pt = getRandomPoint();
-			
-			/* Determine how close it is to a US city. */
-			double distance = distanceToNearestCity(pt, cities);
-			
-			/* Draw a point based on how close we are. */
-			drawPointAtCoordinate(pt.getX(), pt.getY(), radius, getColorForDistance(distance));
-			
-			/* Decay the radius if appropriate. */
-			if (radius > MIN_RADIUS) {
-				radius *= DECAY_RATE;
+		for (int x = 0; x < getWidth(); x++) {
+			for (int y = 0; y < getHeight(); y++) {
+				/* Pick a point to draw. */
+				GPoint pt = new GPoint(x, y);
+
+				/* Determine how close it is to a US city. */
+				double distance = distanceToNearestCity(pt, cities);
+
+				/* Draw a point based on how close we are. */
+				drawPointAtCoordinate(pt.getX(), pt.getY(), radius, getColorForDistance(distance));
+
+				/* Decay the radius if appropriate. */
+				if (radius > MIN_RADIUS) {
+					radius *= DECAY_RATE;
+				}
 			}
 		}
+	}
 	}
 	
 	/**
@@ -136,43 +176,6 @@ public class SeeTheUS extends GraphicsProgram {
 		point.setFilled(true);
 		point.setColor(color);
 		add(point);
-	}
-	
-	/**
-	 * Reads in a list of US cities.
-	 * 
-	 * @return A list of all US cities.
-	 */
-	private ArrayList<City> readUSCities() {
-		try {
-			ArrayList<City> result = new ArrayList<City>();
-			BufferedReader br = new BufferedReader(new FileReader(CITIES_FILE));
-			
-			while (true) {
-				/* Read the three pieces of the city from the file. */
-				String name = br.readLine();
-				String latitude = br.readLine();
-				String longitude = br.readLine();
-				
-				/* If we ran out of data, we're done. */
-				if (longitude == null)
-					break;
-				
-				/* Create the city and add it to the result list.  Note the
-				 * call to Double.parseDouble to convert the string representations
-				 * of the longitude and latitude into doubles.
-				 */
-				City toAdd = new City(name,
-						              Double.parseDouble(longitude),
-						              Double.parseDouble(latitude));
-				result.add(toAdd);
-			}
-			
-			br.close();
-			return result;			
-		} catch (IOException e) {
-			throw new ErrorException(e);
-		}
 	}
 	
 	/**
