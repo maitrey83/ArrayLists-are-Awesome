@@ -45,6 +45,10 @@ public class SeeTheUS extends GraphicsProgram {
 				String name = br.readLine();
 				String latitude = br.readLine();
 				String longitude = br.readLine();
+				
+				if (name == null || latitude == null || longitude == null) {
+					break;
+				}
 			}
 		}
 	}
