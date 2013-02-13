@@ -12,11 +12,11 @@ public class NotSoSimpleArrayLists extends ConsoleProgram {
 		/* ArrayLists are too awesome to have small fonts! */
 		setFont("DejaVuSerif-BOLD-24");
 		
-		ArrayList<String> list = new ArrayList<String>();
+		ArrayList<int> list = new ArrayList<int>();
 		
 		while (true) {
-			String line = readLine("Enter a string: ");
-			if (line.equals("")) break;
+			int value = readInt("Enter an integer: ");
+			if (value == 0) break;
 			
 			list.add(line);
 		}
