@@ -67,6 +67,9 @@ public class SeeTheUS extends GraphicsProgram {
 	private void visualizeTheUS(ArrayList<City> cities) {
 		for (int i = 0; i < cities.size(); i++) {
 			City currCity = cities.get(i);
+			
+			double x = longitudeToXCoordinate(currCity.getLongitude());
+			double y = latitudeToYCoordinate(currCity.getLatitude());
 		}
 	}
 	
