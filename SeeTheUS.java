@@ -203,7 +203,7 @@ public class SeeTheUS extends GraphicsProgram {
 	 * @return The latitude it corresponds to.
 	 */
 	private double yCoordinateToLatitude(double y) {
-		double scaleFactor = (MAX_LATITUDE - MIN_LATITUDE) / getWidth();
+		double scaleFactor = (MAX_LATITUDE - MIN_LATITUDE) / getHeight();
 		return (getHeight() - y) * scaleFactor + MIN_LATITUDE;
 	}
 
