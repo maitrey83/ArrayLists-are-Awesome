@@ -71,7 +71,7 @@ public class SeeTheUS extends GraphicsProgram {
 			double x = longitudeToXCoordinate(currCity.getLongitude());
 			double y = latitudeToYCoordinate(currCity.getLatitude());
 			
-			plotPixel(x, y, Color.BLACK);
+			plotPixel(x, y, Color.BLUE);
 		}
 	}
 	
