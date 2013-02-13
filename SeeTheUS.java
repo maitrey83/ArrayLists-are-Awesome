@@ -55,6 +55,8 @@ public class SeeTheUS extends GraphicsProgram {
 						             Double.parseDouble(longitude));
 				result.add(city);
 			}
+		} catch (IOException e) {
+			// Do nothing...
 		}
 	}
 	
