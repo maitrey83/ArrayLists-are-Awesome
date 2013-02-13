@@ -61,7 +61,6 @@ public class SeeTheUS extends GraphicsProgram {
 	}
 	
 	private void visualizeTheUS(ArrayList<City> cities) {
-		getGCanvas().setAutoRepaintFlag(false);
 		for (int x = 0; x < getWidth(); x++) {
 			for (int y = 0; y < getHeight(); y++) {
 				double latitude  = yCoordinateToLatitude(y);
@@ -73,7 +72,6 @@ public class SeeTheUS extends GraphicsProgram {
 			}
 			println(100.0 * x / getWidth() + "% complete");
 		}
-		getGCanvas().repaint();
 	}
 	
 	private double distanceToNearestCity(double longitude, double latitude,
