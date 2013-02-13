@@ -85,7 +85,7 @@ public class SeeTheUS extends GraphicsProgram {
 	 * @param cities The cities in the US.
 	 */
 	private void visualizeTheUS(ArrayList<City> cities) {
-		//getGCanvas().setAutoRepaintFlag(false);
+		getGCanvas().setAutoRepaintFlag(false);
 		for (int x = 0; x < getWidth(); x++) {
 			for (int y = 0; y < getHeight(); y++) {				
 				/* Pick a point to d - radius, 2 * radius, 2 * radius);raw. */
@@ -99,7 +99,7 @@ public class SeeTheUS extends GraphicsProgram {
 				drawPointAtCoordinate(x, y, 1, getColorForDistance(distance));
 			}
 		}
-		//getGCanvas().repaint();
+		getGCanvas().repaint();
 	}
 	
 	/**
