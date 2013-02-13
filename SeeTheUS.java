@@ -62,14 +62,21 @@ public class SeeTheUS extends GraphicsProgram {
 	}
 	
 	private void visualizeTheUS(ArrayList<City> cities) {
-		for (int i = 0; i < cities.size(); i++) {
-			City current = cities.get(i);
-			
-			double x = longitudeToXCoordinate(current.getLongitude());
-			double y = latitudeToYCoordinate(current.getLatitude());
-			
-			plotPixel(x, y, Color.BLACK);
+		for (int x = 0; x < getWidth(); x++) {
+			for (int y = 0; y < getHeight(); y++) {
+				double longitude = xCoordinateToLongitude(x);
+				double latitude  = yCoordinateToLatitude(y);
+				
+				double distance = distanceToNearestCity(cities, longitude, latitude);
+				
+				plotPixel(x, y, getColorForDistance(distance));
+			}
 		}
+	}
+	
+	private double distanceToNearestCity(ArrayList<City> cities,
+			                             double longitude, double latitude) {
+		
 	}
 	
 	private void plotPixel(double x, double y, Color color) {
