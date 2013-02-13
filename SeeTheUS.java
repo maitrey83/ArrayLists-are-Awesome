@@ -31,7 +31,33 @@ public class SeeTheUS extends GraphicsProgram {
 	private static final String CITIES_FILE = "us-cities.txt";
 	
 	public void run() {	
+		ArrayList<City> cities = loadUSCities();
+		visualizeTheUS(cities);
+	}
 	
+	private ArrayList<City> loadUSCities() {
+		ArrayList<City> result = new ArrayList<City>();
+		
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(CITIES_FILE));
+			while (true) {
+				String name = br.readLine();
+				String latitude = br.readLine();
+				String longitude = br.readLine();
+				
+				if (longitude == null) break;
+				
+				City city = new City(name,
+						             Double.parseDouble(latitude),
+						             Double.parseDouble(longitude));
+				result.add(city);
+			}
+			
+		} catch (IOException e) {
+			// Should do something here...
+		}
+		
+		return result;
 	}
 	
 	
