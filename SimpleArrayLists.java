@@ -7,5 +7,12 @@ public class SimpleArrayLists extends ConsoleProgram {
 		setFont("DejaVuSerif-BOLD-24");
 		
 		ArrayList<String> list = new ArrayList<String>();
+		
+		while (true) {
+			String line = readLine("Enter a string: ");
+			if (line.equals("")) break;
+			
+			list.add(line);
+		}
 	}
 }
