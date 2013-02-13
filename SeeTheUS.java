@@ -15,8 +15,8 @@ import java.io.*;
 
 public class SeeTheUS extends GraphicsProgram {
 	/* Make the window large so that we can see more detail. */
-	public static final int APPLICATION_WIDTH = 1000;
-	public static final int APPLICATION_HEIGHT = 700;
+	public static final int APPLICATION_WIDTH = 1000 / 5;
+	public static final int APPLICATION_HEIGHT = 700 / 5;
 	
 	/* The viewpoint coordinates - the minimum and maximum longitude
 	 * and latitude.
