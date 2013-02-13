@@ -69,6 +69,12 @@ public class SeeTheUS extends GraphicsProgram {
 			for (int y = 0; y < getHeight(); y++) {
 				double longitude = xCoordinateToLongitude(x);
 				double latitude = yCoordinateToLatitude(y);
+				
+				double distance = distanceToNearestCity(longitude,
+						     							latitude,
+						     							cities);
+				
+				plotPixel(x, y, getColorForDistance(distance));
 			}
 		}
 	}
