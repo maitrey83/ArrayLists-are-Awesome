@@ -33,7 +33,13 @@ public class SeeTheUS extends GraphicsProgram {
 	public void run() {	
 		ArrayList<City> cities = readUSCities();
 		visualizeTheUS(cities);
-	}	
+	}
+	
+	private ArrayList<City> readUSCities() {
+		ArrayList<City> result = new ArrayList<City>();
+		
+		
+	}
 	
 	/**
 	 * Given a raw longitude, returns the screen x coordinate where
