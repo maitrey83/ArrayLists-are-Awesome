@@ -11,6 +11,17 @@ public class NotSoSimpleArrayLists extends ConsoleProgram {
 	public void run() {
 		setFont("DejaVuSerif-BOLD-24");
 		
+		ArrayList<int> lines = new ArrayList<int>();
 		
+		while (true) {
+			int value = readInt("Enter a value: ");
+			if (value == 0) break;
+			
+			lines.add(line);
+		}
+		
+		for (int i = 0; i < lines.size(); i++) {
+			println("Line #" + i + ": " + lines.get(i));
+		}
 	}
 }
