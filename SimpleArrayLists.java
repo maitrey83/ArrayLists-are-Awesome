@@ -14,5 +14,9 @@ public class SimpleArrayLists extends ConsoleProgram {
 			
 			list.add(line);
 		}
+		
+		for (int i = 0; i < list.size(); i++) {
+			println("Line #" + i + " is " + list.get(i));
+		}
 	}
 }
