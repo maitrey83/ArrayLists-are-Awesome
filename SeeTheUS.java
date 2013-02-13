@@ -223,8 +223,6 @@ public class SeeTheUS extends GraphicsProgram {
 		 * use the arctangent function.
 		 */
 		float intensity = 1.0f - (float)(Math.atan(distance) / (Math.PI / 2.0));
-		intensity = intensity * intensity;
 		return new Color(intensity, intensity, intensity);
-		//return Color.GREEN;
 	}
 }
