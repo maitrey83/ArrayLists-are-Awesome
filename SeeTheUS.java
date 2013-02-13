@@ -78,8 +78,9 @@ public class SeeTheUS extends GraphicsProgram {
 			                             double longitude, double latitude) {
 		double bestDistance = Double.POSITIVE_INFINITY;
 		for (int i = 0; i < cities.size(); i++) {
-			double distance = distanceBetween(cities.getLongitude(),
-					                          cities.getLatitude(),
+			City curr = cities.get(i);
+			double distance = distanceBetween(curr.getLongitude(),
+					                          curr.getLatitude(),
 					                          longitude,
 					                          latitude);
 			if (distance < bestDistance) {
@@ -87,6 +88,13 @@ public class SeeTheUS extends GraphicsProgram {
 			}
 		}
 		return bestDistance;
+	}
+	
+	private double distanceBetween(double x0, double y0,
+			                       double x1, double y1) {
+		double dx = x0 - x1;
+		double dy = y0 - y1;
+		return Math.sqrt(dx * dx + dy * dy);
 	}
 	
 	private void plotPixel(double x, double y, Color color) {
