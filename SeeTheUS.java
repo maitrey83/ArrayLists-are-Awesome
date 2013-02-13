@@ -164,7 +164,7 @@ public class SeeTheUS extends GraphicsProgram {
 		double y = latitudeToYCoordinate(latitude);
 
 		/* Create a point at that location. */
-		GRect point = new GRect(x - radius, y - radius, 2 * radius, 2 * radius);
+		GRect point = new GRect(x, y, 1, 1)
 		point.setFilled(true);
 		point.setColor(color);
 		add(point);
