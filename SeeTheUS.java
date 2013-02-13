@@ -77,6 +77,8 @@ public class SeeTheUS extends GraphicsProgram {
 				
 				plotPixel(x, y, getColorForDistance(distance));
 			}
+			
+			println(100.0 * x / getWidth() + "%");
 		}
 		getGCanvas().repaint();
 	}
