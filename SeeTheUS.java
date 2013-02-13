@@ -49,6 +49,9 @@ public class SeeTheUS extends GraphicsProgram {
 				if (name == null || latitude == null || longitude == null) {
 					break;
 				}
+				
+				City city = new City(name, latitude, longitude);
+				result.add(city);
 			}
 		}
 	}
