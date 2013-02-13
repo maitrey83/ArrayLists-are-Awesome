@@ -92,6 +92,8 @@ public class SeeTheUS extends GraphicsProgram {
 	private void visualizeTheUS(ArrayList<City> cities) {	
 		for (int x = 0; x < getWidth(); x++) {
 			for (int y = 0; y < getHeight(); y++) {
+				double longitude = 
+				
 				/* Pick a point to draw. */
 				GPoint pt = new GPoint(x, y);
 
@@ -189,6 +191,30 @@ public class SeeTheUS extends GraphicsProgram {
 	 */
 	private double latitudeToYCoordinate(double latitude) {
 		return getHeight() * (1.0 - (latitude - MIN_LATITUDE) / (MAX_LATITUDE - MIN_LATITUDE)); 
+	}
+	
+	/**
+	 * Given a raw X coordinate, returns the longitude it corresponds
+	 * to.
+	 * 
+	 * @param x The x coordinate in question.
+	 * @return The longitude it corresponds to.
+	 */
+	private double xCoordinateToLongitude(double x) {
+		double scaleFactor = (MAX_LONGITUDE - MIN_LONGITUDE) / getWidth();
+		return x * scaleFactor + MIN_LONGITUDE;
+	}
+	
+	/**
+	 * Given a raw Y coordinate, returns the latitude it corresponds
+	 * to.
+	 * 
+	 * @param y The y coordinate in question.
+	 * @return The latitude it corresponds to.
+	 */
+	private double yCoordinateToLatitude(double y) {
+		double scaleFactor = (MAX_LATITUDE - MIN_LATITUDE) / getWidth();
+		return y * scaleFactor + MIN_LATITUDE;
 	}
 
 	/**
