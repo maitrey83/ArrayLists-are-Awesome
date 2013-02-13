@@ -99,6 +99,7 @@ public class SeeTheUS extends GraphicsProgram {
 				drawPointAtCoordinate(x, y, 1, getColorForDistance(distance));
 			}
 		}
+		//getGCanvas().repaint();
 	}
 	
 	/**
