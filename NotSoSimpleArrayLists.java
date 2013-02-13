@@ -11,7 +11,6 @@ public class NotSoSimpleArrayLists extends ConsoleProgram {
 	public void run() {
 		setFont("DejaVuSerif-BOLD-24");
 		
-		/* Note the use of ArrayList<Integer> rather than ArrayList<int>. */
 		ArrayList<int> list = new ArrayList<int>();
 		
 		while (true) {
