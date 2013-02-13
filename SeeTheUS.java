@@ -30,10 +30,7 @@ public class SeeTheUS extends GraphicsProgram {
 	/* The name of the cities file. */
 	private static final String CITIES_FILE = "us-cities.txt";
 	
-	public void run() {
-		/* Everything is more awesome on a black background! */
-		setBackground(Color.BLACK);
-		
+	public void run() {	
 		ArrayList<City> usCities = loadUSCities();
 		
 		visualizeTheUS(usCities);
