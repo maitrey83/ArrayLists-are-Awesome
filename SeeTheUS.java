@@ -64,6 +64,12 @@ public class SeeTheUS extends GraphicsProgram {
 		return result;
 	}
 	
+	private void visualizeTheUS(ArrayList<City> cities) {
+		for (int i = 0; i < cities.size(); i++) {
+			City currCity = cities.get(i);
+		}
+	}
+	
 	/**
 	 * Given a raw longitude, returns the screen x coordinate where
 	 * it should be displayed.
