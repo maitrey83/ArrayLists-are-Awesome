@@ -91,17 +91,16 @@ public class SeeTheUS extends GraphicsProgram {
 	 */
 	private void visualizeTheUS(ArrayList<City> cities) {	
 		for (int x = 0; x < getWidth(); x++) {
-			for (int y = 0; y < getHeight(); y++) {
-				double longitude = 
-				
+			for (int y = 0; y < getHeight(); y++) {				
 				/* Pick a point to draw. */
-				GPoint pt = new GPoint(x, y);
+				GPoint pt = new GPoint(xCoordinateToLongitude(x),
+						               yCoordinateToLatitude(y));
 
 				/* Determine how close it is to a US city. */
 				double distance = distanceToNearestCity(pt, cities);
 
 				/* Draw a point based on how close we are. */
-				drawPointAtCoordinate(pt.getX(), pt.getY(), 1, getColorForDistance(distance));
+				drawPointAtCoordinate(x, y, 1, getColorForDistance(distance));
 			}
 		}
 	}
