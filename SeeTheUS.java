@@ -103,17 +103,6 @@ public class SeeTheUS extends GraphicsProgram {
 	}
 	
 	/**
-	 * Chooses a random longitude/latitude point in the bounding box for US cities.
-	 * 
-	 * @return A random longitude/latitude point in the bounding box for US cities.
-	 */
-	private GPoint getRandomPoint() {
-		RandomGenerator rgen = RandomGenerator.getInstance();
-		return new GPoint(rgen.nextDouble(MIN_LONGITUDE, MAX_LONGITUDE),
-				          rgen.nextDouble(MIN_LATITUDE, MAX_LATITUDE));
-	}
-	
-	/**
 	 * Given a longitude/latitude point and a list of US cities, returns how close the given
 	 * point is to a US city.
 	 * 
