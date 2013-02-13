@@ -83,6 +83,10 @@ public class SeeTheUS extends GraphicsProgram {
 			                             double latitude,
 			                             ArrayList<City> cities) {
 		double bestDistance = Double.POSITIVE_INFINITY;
+		
+		for (int i = 0; i < cities.size(); i++) {
+			City currCity = cities.get(i);
+		}
 	}
 	
 	private void plotPixel(double x, double y, Color color) {
