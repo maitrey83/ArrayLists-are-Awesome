@@ -21,7 +21,7 @@ public class SeeTheUS extends GraphicsProgram {
 	/* The viewpoint coordinates - the minimum and maximum longitude
 	 * and latitude.
 	 */
-	private static final double MIN_LONGITUDE = -90;
+	private static final double MIN_LONGITUDE = -180;
 	private static final double MAX_LONGITUDE = -60;
 	
 	private static final double MIN_LATITUDE = +15;
