@@ -34,10 +34,53 @@ public class SeeTheUS extends GraphicsProgram {
 		/* Everything is more awesome on a black background! */
 		setBackground(Color.BLACK);
 		
+		ArrayList<City> usCities = loadUSCities();
 		
+		visualizeTheUS(usCities);
 	}
 	
+	private ArrayList<City> loadUSCities() {
+		ArrayList<City> result = new ArrayList<City>();
+		
+		try {
+			BufferedReader br = new BufferedReader(new FileReader("us-cities.txt"));
+			
+			while (true) {
+				String cityName  = br.readLine();
+				String latitude  = br.readLine();
+				String longitude = br.readLine();
+				
+				if (longitude == null) break;
+				
+				City city = new City(cityName,
+						             Double.parseDouble(latitude),
+						             Double.parseDouble(longitude));
+				result.add(city);
+			}
+		} catch (IOException e) {
+			return null;
+		}
+		
+		return result;
+	}
 	
+	private void visualizeTheUS(ArrayList<City> cities) {
+		for (int i = 0; i < cities.size(); i++) {
+			City current = cities.get(i);
+			
+			double x = longitudeToXCoordinate(current.getLongitude());
+			double y = latitudeToYCoordinate(current.getLatitude());
+			
+			plotPixel(x, y, Color.WHITE);
+		}
+	}
+	
+	private void plotPixel(double x, double y, Color color) {
+		GRect pixel = new GRect(x, y, 1, 1);
+		pixel.setFilled(true);
+		pixel.setColor(color);
+		add(pixel);
+	}
 	
 	/**
 	 * Given a raw longitude, returns the screen x coordinate where
