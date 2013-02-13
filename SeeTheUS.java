@@ -204,7 +204,7 @@ public class SeeTheUS extends GraphicsProgram {
 	 */
 	private double yCoordinateToLatitude(double y) {
 		double scaleFactor = (MAX_LATITUDE - MIN_LATITUDE) / getWidth();
-		return y * scaleFactor + MIN_LATITUDE;
+		return (getHeight() - y) * scaleFactor + MIN_LATITUDE;
 	}
 
 	/**
