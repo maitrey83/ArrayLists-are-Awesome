@@ -94,6 +94,7 @@ public class SeeTheUS extends GraphicsProgram {
 			for (int y = 0; y < getHeight(); y++) {
 				/* Pick a point to draw. */
 				GPoint pt = new GPoint(x, y);
+				println(pt);
 
 				/* Determine how close it is to a US city. */
 				double distance = distanceToNearestCity(pt, cities);
