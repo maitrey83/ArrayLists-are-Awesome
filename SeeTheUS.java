@@ -76,7 +76,17 @@ public class SeeTheUS extends GraphicsProgram {
 	
 	private double distanceToNearestCity(ArrayList<City> cities,
 			                             double longitude, double latitude) {
-		
+		double bestDistance = Double.POSITIVE_INFINITY;
+		for (int i = 0; i < cities.size(); i++) {
+			double distance = distanceBetween(cities.getLongitude(),
+					                          cities.getLatitude(),
+					                          longitude,
+					                          latitude);
+			if (distance < bestDistance) {
+				bestDistance = distance;
+			}
+		}
+		return bestDistance;
 	}
 	
 	private void plotPixel(double x, double y, Color color) {
