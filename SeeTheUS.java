@@ -154,10 +154,6 @@ public class SeeTheUS extends GraphicsProgram {
 	 * @param color What color to use.
 	 */
 	private void drawPointAtCoordinate(double longitude, double latitude, double radius, Color color) {
-		/* Determine the x/y coordinates from the longitude and latitude. */
-		double x = longitudeToXCoordinate(longitude);
-		double y = latitudeToYCoordinate(latitude);
-
 		/* Create a point at that location. */
 		GRect point = new GRect(x, y, 1, 1);
 		point.setFilled(true);
