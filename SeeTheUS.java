@@ -79,6 +79,12 @@ public class SeeTheUS extends GraphicsProgram {
 		}
 	}
 	
+	private double distanceToNearestCity(double longitude,
+			                             double latitude,
+			                             ArrayList<City> cities) {
+		
+	}
+	
 	private void plotPixel(double x, double y, Color color) {
 		GRect pixel = new GRect(x, y, 1, 1);
 		pixel.setFilled(true);
