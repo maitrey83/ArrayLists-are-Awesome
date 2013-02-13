@@ -31,7 +31,8 @@ public class SeeTheUS extends GraphicsProgram {
 	private static final String CITIES_FILE = "us-cities.txt";
 	
 	public void run() {	
-		
+		ArrayList<City> cities = readUSCities();
+		visualizeTheUS(cities);
 	}	
 	
 	/**
