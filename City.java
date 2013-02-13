@@ -16,13 +16,13 @@ public class City {
 	 * Constructs a city given the name, longitude, and latitude of that city.
 	 * 
 	 * @param name The name of the city.
-	 * @param longitude The longitude of the city.
 	 * @param latitude The latitude of the city.
+	 * @param longitude The longitude of the city.
 	 */
-	public City(String name, double longitude, double latitude) {
+	public City(String name, double latitude, double longitude) {
 		this.name = name;
-		this.longitude = longitude;
 		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 	
 	/**
