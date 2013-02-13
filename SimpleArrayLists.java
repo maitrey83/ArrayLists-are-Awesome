@@ -6,6 +6,6 @@ public class SimpleArrayLists extends ConsoleProgram {
 		/* ArrayLists are too awesome to have small fonts! */
 		setFont("DejaVuSerif-BOLD-24");
 		
-		
+		ArrayList<String> list = new ArrayList<String>();
 	}
 }
