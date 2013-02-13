@@ -17,7 +17,7 @@ public class NotSoSimpleArrayLists extends ConsoleProgram {
 			int value = readInt("Enter a value: ");
 			if (value == 0) break;
 			
-			lines.add(line);
+			lines.add(value);
 		}
 		
 		for (int i = 0; i < lines.size(); i++) {
