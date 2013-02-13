@@ -50,6 +50,9 @@ public class SeeTheUS extends GraphicsProgram {
 					break;
 				}
 				
+				int totallyAnInt = 137;
+				double totallyReal = totallyAnInt;
+				
 				City city = new City(name,
 						             Double.parseDouble(latitude),
 						             Double.parseDouble(longitude));
