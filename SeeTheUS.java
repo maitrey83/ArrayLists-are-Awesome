@@ -78,6 +78,7 @@ public class SeeTheUS extends GraphicsProgram {
 				plotPixel(x, y, getColorForDistance(distance));
 			}
 		}
+		getGCanvas().repaint();
 	}
 	
 	private double distanceToNearestCity(double longitude,
