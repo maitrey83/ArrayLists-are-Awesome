@@ -55,9 +55,13 @@ public class SeeTheUS extends GraphicsProgram {
 						             Double.parseDouble(longitude));
 				result.add(city);
 			}
+			
+			br.close();
 		} catch (IOException e) {
 			// Do nothing...
 		}
+		
+		return result;
 	}
 	
 	/**
