@@ -42,7 +42,9 @@ public class SeeTheUS extends GraphicsProgram {
 			BufferedReader br = new BufferedReader(new FileReader(CITIES_FILE));
 			
 			while (true) {
-				
+				String name = br.readLine();
+				String latitude = br.readLine();
+				String longitude = br.readLine();
 			}
 		}
 	}
