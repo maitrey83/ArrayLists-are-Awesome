@@ -40,7 +40,7 @@ public class SeeTheUS extends GraphicsProgram {
 		ArrayList<City> result = new ArrayList<City>();
 		
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("us-cities.txt"));
+			BufferedReader br = new BufferedReader(new FileReader(CITIES_FILE));
 			
 			while (true) {
 				String cityName  = br.readLine();
