@@ -38,7 +38,13 @@ public class SeeTheUS extends GraphicsProgram {
 	private ArrayList<City> readUSCities() {
 		ArrayList<City> result = new ArrayList<City>();
 		
-		
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(CITIES_FILE));
+			
+			while (true) {
+				
+			}
+		}
 	}
 	
 	/**
