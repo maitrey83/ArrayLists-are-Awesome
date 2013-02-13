@@ -12,7 +12,7 @@ public class NotSoSimpleArrayLists extends ConsoleProgram {
 		/* ArrayLists are too awesome to have small fonts! */
 		setFont("DejaVuSerif-BOLD-24");
 		
-		ArrayList<int> list = new ArrayList<int>();
+		ArrayList<Integer> list = new ArrayList<Integer>();
 		
 		while (true) {
 			int value = readInt("Enter an integer: ");
