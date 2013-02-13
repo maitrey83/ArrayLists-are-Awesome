@@ -153,7 +153,7 @@ public class SeeTheUS extends GraphicsProgram {
 	 * @param radius The radius of the block.
 	 * @param color What color to use.
 	 */
-	private void drawPointAtCoordinate(double longitude, double latitude, double radius, Color color) {
+	private void drawPointAtCoordinate(double x, double y, double radius, Color color) {
 		/* Create a point at that location. */
 		GRect point = new GRect(x, y, 1, 1);
 		point.setFilled(true);
