@@ -31,81 +31,10 @@ public class SeeTheUS extends GraphicsProgram {
 	private static final String CITIES_FILE = "us-cities.txt";
 	
 	public void run() {	
-		ArrayList<City> usCities = loadUSCities();
-		
-		visualizeTheUS(usCities);
+	
 	}
 	
-	private ArrayList<City> loadUSCities() {
-		ArrayList<City> result = new ArrayList<City>();
-		
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(CITIES_FILE));
-			
-			while (true) {
-				String cityName  = br.readLine();
-				String latitude  = br.readLine();
-				String longitude = br.readLine();
-				
-				if (longitude == null) break;
-				
-				City city = new City(cityName,
-						             Double.parseDouble(latitude),
-						             Double.parseDouble(longitude));
-				result.add(city);
-			}
-		} catch (IOException e) {
-			return null;
-		}
-		
-		return result;
-	}
 	
-	private void visualizeTheUS(ArrayList<City> cities) {
-		getGCanvas().setAutoRepaintFlag(false);
-		for (int x = 0; x < getWidth(); x++) {
-			for (int y = 0; y < getHeight(); y++) {
-				double longitude = xCoordinateToLongitude(x);
-				double latitude  = yCoordinateToLatitude(y);
-				
-				double distance = distanceToNearestCity(cities, longitude, latitude);
-				
-				plotPixel(x, y, getColorForDistance(distance));
-			}
-			println(100.0 * x / getWidth() + "%");
-		}
-		getGCanvas().repaint();
-	}
-	
-	private double distanceToNearestCity(ArrayList<City> cities,
-			                             double longitude, double latitude) {
-		double bestDistance = Double.POSITIVE_INFINITY;
-		for (int i = 0; i < cities.size(); i++) {
-			City curr = cities.get(i);
-			double distance = distanceBetween(curr.getLongitude(),
-					                          curr.getLatitude(),
-					                          longitude,
-					                          latitude);
-			if (distance < bestDistance) {
-				bestDistance = distance;
-			}
-		}
-		return bestDistance;
-	}
-	
-	private double distanceBetween(double x0, double y0,
-			                       double x1, double y1) {
-		double dx = x0 - x1;
-		double dy = y0 - y1;
-		return Math.sqrt(dx * dx + dy * dy);
-	}
-	
-	private void plotPixel(double x, double y, Color color) {
-		GRect pixel = new GRect(x, y, 1, 1);
-		pixel.setFilled(true);
-		pixel.setColor(color);
-		add(pixel);
-	}
 	
 	/**
 	 * Given a raw longitude, returns the screen x coordinate where
