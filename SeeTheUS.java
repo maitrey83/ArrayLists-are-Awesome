@@ -86,6 +86,14 @@ public class SeeTheUS extends GraphicsProgram {
 		
 		for (int i = 0; i < cities.size(); i++) {
 			City currCity = cities.get(i);
+			
+			double distance = distanceBetween(longitude, latitude,
+					                          currCity.getLongitude(),
+					                          currCity.getLatitude());
+			
+			if (distance < bestDistance) {
+				bestDistance = distance;
+			}
 		}
 	}
 	
