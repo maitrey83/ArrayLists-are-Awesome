@@ -95,6 +95,8 @@ public class SeeTheUS extends GraphicsProgram {
 				bestDistance = distance;
 			}
 		}
+		
+		return bestDistance;
 	}
 	
 	private double distanceBetween(double x0, double y0, double x1, double y1) {
