@@ -75,6 +75,13 @@ public class SeeTheUS extends GraphicsProgram {
 		}
 	}
 	
+	private void plotPixel(double x, double y, Color color) {
+		GRect pixel = new GRect(x, y, 1, 1);
+		pixel.setFilled(true);
+		pixel.setColor(color);
+		add(pixel);
+	}
+	
 	/**
 	 * Given a raw longitude, returns the screen x coordinate where
 	 * it should be displayed.
