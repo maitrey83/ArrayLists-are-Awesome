@@ -60,6 +60,24 @@ public class SeeTheUS extends GraphicsProgram {
 		return result;
 	}
 	
+	private void visualizeTheUS(ArrayList<City> cities) {
+		for (int i = 0; i < cities.size(); i++) {
+			City current = cities.get(i);
+			
+			double x = longitudeToXCoordinate(current.getLongitude());
+			double y = latitudeToYCoordinate(current.getLatitude());
+			
+			plotPixel(x, y, Color.BLACK);
+		}
+	}
+	
+	private void plotPixel(double x, double y, Color color) {
+		GRect pixel = new GRect(x, y, 1, 1);
+		pixel.setFilled(true);
+		pixel.setColor(color);
+		add(pixel);
+	}
+	
 	
 	
 	/**
