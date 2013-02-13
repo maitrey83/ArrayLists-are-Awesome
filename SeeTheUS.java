@@ -27,11 +27,6 @@ public class SeeTheUS extends GraphicsProgram {
 	private static final double MIN_LATITUDE = +15;
 	private static final double MAX_LATITUDE = +75;
 	
-	/* For the heat map, the initial radius, minimum radius, and decay rate. */
-	private static final double INITIAL_RADIUS = 75;
-	private static final double DECAY_RATE = 0.999;
-	private static final double MIN_RADIUS = 5;
-	
 	/* The name of the cities file. */
 	private static final String CITIES_FILE = "us-cities.txt";
 	
@@ -92,7 +87,7 @@ public class SeeTheUS extends GraphicsProgram {
 	private void visualizeTheUS(ArrayList<City> cities) {	
 		for (int x = 0; x < getWidth(); x++) {
 			for (int y = 0; y < getHeight(); y++) {				
-				/* Pick a point to draw. */
+				/* Pick a point to d - radius, 2 * radius, 2 * radius);raw. */
 				GPoint pt = new GPoint(xCoordinateToLongitude(x),
 						               yCoordinateToLatitude(y));
 
