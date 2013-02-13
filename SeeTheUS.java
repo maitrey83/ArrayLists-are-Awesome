@@ -94,7 +94,6 @@ public class SeeTheUS extends GraphicsProgram {
 			for (int y = 0; y < getHeight(); y++) {
 				/* Pick a point to draw. */
 				GPoint pt = new GPoint(x, y);
-				println(pt);
 
 				/* Determine how close it is to a US city. */
 				double distance = distanceToNearestCity(pt, cities);
@@ -204,6 +203,7 @@ public class SeeTheUS extends GraphicsProgram {
 		 * use the arctangent function.
 		 */
 		float intensity = 1.0f - (float)(Math.atan(distance) / (Math.PI / 2.0));
-		return new Color(intensity, intensity, intensity);
+		//return new Color(intensity, intensity, intensity);
+		return Color.GREEN;
 	}
 }
