@@ -50,7 +50,9 @@ public class SeeTheUS extends GraphicsProgram {
 					break;
 				}
 				
-				City city = new City(name, latitude, longitude);
+				City city = new City(name,
+						             Double.parseDouble(latitude),
+						             Double.parseDouble(longitude));
 				result.add(city);
 			}
 		}
